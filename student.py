@@ -58,7 +58,16 @@ class Piggy(PiggyParent):
     '''
     def john(self):
       self.fwd()
-      time.sleep(2)
+      time.sleep(5)
+      self.turn_deg(90)
+      self.fwd()
+      self.sleep(5)
+      self.turn_deg(90)
+      self.fwd()
+      self.sleep(5)
+      self.turn_deg(90)
+      self.fwd()
+      self.sleep(5)
       self.stop()
   
     def dance(self):
