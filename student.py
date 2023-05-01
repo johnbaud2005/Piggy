@@ -58,17 +58,15 @@ class Piggy(PiggyParent):
     '''
     def john(self):
       self.fwd()
-      time.sleep(5)
-      self.right(primary=90, counter=0)
-      self.fwd()
-      self.sleep(5)
-      self.right(primary=90, counter=0)
-      self.fwd()
-      self.sleep(5)
-      self.right(primary=90, counter=0)
-      self.fwd()
-      self.sleep(5)
-      self.stop()
+        time.sleep(1)
+        self.stop()
+
+        for x in range(4)
+        self.right()
+        time.sleep(1)
+        self.fwd()
+        time.sleep()
+        self.stop()
   
     def dance(self):
         """A higher-ordered algorithm to make your robot dance"""
