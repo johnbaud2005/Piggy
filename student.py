@@ -57,16 +57,12 @@ class Piggy(PiggyParent):
     ****************
     '''
     def john(self):
-      self.fwd()
-      time.sleep(1)
-      self.stop()
-
-      for x in range(4)
-      self.right()
-      time.sleep(1)
-      self.fwd()
-      time.sleep()
-      self.stop()
+      for x in range(4):
+        self.right()
+        time.sleep(1)
+        self.fwd()
+        time.sleep()
+        self.stop()
   
     def dance():
       if safe():
