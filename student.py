@@ -59,8 +59,8 @@ class Piggy(PiggyParent):
     def john(self):
       self.scan()
       print ("self.scan_date")
-    def dance():
-      f self.safe_to_dance():
+    def dance(self):
+     if self.safe_to_dance():
         self.fwd()
         self.sleep(2)
         self.stop()
