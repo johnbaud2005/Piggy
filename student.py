@@ -67,13 +67,13 @@ class Piggy(PiggyParent):
         self.stop()
   
     def dance():
-      for x in range():
-        self.fwd()
+      for x in range(4):
+        self.scan()
         if safe():
-          self.fwd()
+          self.turn(360)
         else:
-          self.right(180)
           self.fwd()
+          
         
         # TODO: check to see if it's safe before dancing
         
