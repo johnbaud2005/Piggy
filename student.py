@@ -57,22 +57,25 @@ class Piggy(PiggyParent):
     ****************
     '''
     def john(self):
-      for x in range(4):
-        self.right()
-        time.sleep(1)
+      self.scan()
+      print ("self.scan_date")
+    def dance():
+      f self.safe_to_dance():
+        self.fwd()
+        self.sleep(2)
         self.stop()
+
+        self.right()
+        self.sleep(3)
+        self.stop()
+
+        self.left()
+        self.sleep(3)
+        self.stop
         
         self.fwd()
         time.sleep(1)
         self.stop()
-  
-    def dance():
-      for x in range(4):
-        self.scan()
-        if safe():
-          self.turn(360)
-        else:
-          self.fwd()
           
         
         # TODO: check to see if it's safe before dancing
