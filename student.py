@@ -87,7 +87,7 @@ class Piggy(PiggyParent):
 
     def safe_to_dance(self):
         """ Does a 360 distance check and returns true if safe """
-        pass
+        return True
 
     def shake(self):
         """ Another example move """
