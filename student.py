@@ -87,16 +87,13 @@ class Piggy(PiggyParent):
         self.stop()
 
     def safe_to_dance(self):
-      for x in range(4):
-        self.scan()
-        for value in self.scan_data():
-          if self.scan_date_value>(300):
-            False
+      for x in self.scan_data:
+          if self.scan_data[x] < 300:
             print("Not Safe To Dance")
-            self.right()
-          else:
-            print("Safe To Dance")
-            self.dance()
+            return False
+      print("Safe To Dance")
+      return True
+      
         
 
     def shake(self):
