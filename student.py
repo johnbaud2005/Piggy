@@ -58,7 +58,8 @@ class Piggy(PiggyParent):
     '''
     def john(self):
       self.scan()
-      print ("self.scan_date")
+      print (self.scan_data)
+      
     def dance(self):
      if self.safe_to_dance():
         self.fwd()
@@ -87,7 +88,7 @@ class Piggy(PiggyParent):
 
     def safe_to_dance(self):
       for x in range(4):
-        self.scan_data()
+        self.scan()
         for value in self.scan_data():
           if self.scan_date_value>(300):
             False
@@ -114,7 +115,7 @@ class Piggy(PiggyParent):
 
     def scan(self):
         """Sweep the servo and populate the scan_data dictionary"""
-        for angle in range(self.MIDPOINT-350, self.MIDPOINT+350, 3):
+        for angle in range(self.MIDPOINT-350, self.MIDPOINT+350, 20):
             self.servo(angle)
             self.scan_data[angle] = self.read_distance()
 
