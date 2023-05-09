@@ -89,10 +89,10 @@ class Piggy(PiggyParent):
       for x in range(4):
         self.scan_date()
         for value in self.scan_data():
-          if self.scan_date value > 300
-          False
-          print("Not Safe To Dance")
-          self.right()
+          if self.scan_date_value>(300):
+            False
+            print("Not Safe To Dance")
+            self.right()
           else:
             print("Safe To Dance")
             self.dance()
