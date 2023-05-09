@@ -73,7 +73,6 @@ class Piggy(PiggyParent):
       else:
         self.right(180)
         self.fwd()
-        self.stop()
         
         # TODO: check to see if it's safe before dancing
         
