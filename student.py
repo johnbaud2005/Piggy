@@ -36,6 +36,7 @@ class Piggy(PiggyParent):
         print("\n *** MENU ***") 
         menu = {"n": ("Navigate", self.nav),
                 "d": ("Dance", self.dance),
+                "w": ("Wall", self.wall),
                 "o": ("Obstacle count", self.obstacle_count),
                 "s": ("Shy", self.shy),
                 "f": ("Follow", self.follow),
@@ -98,6 +99,14 @@ class Piggy(PiggyParent):
         self.stop()
       print("Safe To Dance")
       return True
+
+
+    def wall(self):
+      while True
+      self.fwd()
+      self.sleep(2)
+      self.stop()
+      self.scan()
       
         
 
