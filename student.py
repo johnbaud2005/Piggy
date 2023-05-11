@@ -104,9 +104,9 @@ class Piggy(PiggyParent):
     def wall(self):
       while True
       self.fwd()
-      self.sleep(2)
-      self.stop()
+      self.servo()
       self.scan()
+      self.stop()
       
         
 
