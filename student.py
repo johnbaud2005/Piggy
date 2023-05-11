@@ -87,6 +87,7 @@ class Piggy(PiggyParent):
         self.stop()
 
     def safe_to_dance(self):
+      self.scan()
       for x in self.scan_data:
           if self.scan_data[x] < 300:
             print("Not Safe To Dance")
