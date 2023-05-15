@@ -102,11 +102,10 @@ class Piggy(PiggyParent):
 
 
     def wall(self):
-      while True
-      self.fwd()
-      self.servo()
-      self.scan()
-      self.stop()
+      for angle in range(self.MIDPOINT-350, self.MIDPOINT+350, 20):
+            self.servo(angle)
+            self.scan_data[angle] = self.read_distance()
+            self.stop
       
         
 
