@@ -38,6 +38,7 @@ class Piggy(PiggyParent):
                 "d": ("Dance", self.dance),
                 "w": ("Wall", self.wall),
                 "l": ("Wallloop", self.wallloop),
+                "a": ("Aroundbox", self.aroundbox),
                 "o": ("Obstacle count", self.obstacle_count),
                 "s": ("Shy", self.shy),
                 "f": ("Follow", self.follow),
@@ -114,6 +115,15 @@ class Piggy(PiggyParent):
         self.fwd()
         if self.read_distance() < 300:
           self.right()
+          time.sleep(2)
+
+    def aroundbox(self):
+      while True:
+        self.fwd()
+        if self.read_distance() < 300:
+          self.right()
+          time.sleep(2)
+          self.left()
           time.sleep(2)
           
         
