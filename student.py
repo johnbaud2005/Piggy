@@ -102,11 +102,18 @@ class Piggy(PiggyParent):
 
 
     def wall(self):
-      for angle in range(self.MIDPOINT-350, self.MIDPOINT+350, 20):
-            self.servo(angle)
-            self.scan_data[angle] = self.read_distance()
-            self.stop
-      
+      while True:
+        self.fwd()
+        if self.read_distance() < 300:
+          self.stop()
+          break
+
+    def wallloop(self):
+      while True:
+        self.fwd()
+        if self.read_distance() < 300:
+          self.right()
+          self.sleep(1)
         
 
     def shake(self):
