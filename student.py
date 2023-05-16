@@ -129,7 +129,7 @@ class Piggy(PiggyParent):
           self.left()
           time.sleep(1)
           self.stop()
-        elif: self.read_disctance() > 300:
+        elif self.read_disctance() > 300:
           self.left()
           time.sleep(1)
           self.fwd()
