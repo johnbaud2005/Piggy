@@ -137,9 +137,10 @@ class Piggy(PiggyParent):
           self.scan_data[angle] = self.read_distance()
           if self.read_distance() > 0 < 350:
             self.right()
-        elif self.read_distance() >-350 < 0:
+          elif self.read_distance() >-350 < 0:
             self.left()
 
+  
     def shake(self):
         """ Another example move """
         self.deg_fwd(720)
