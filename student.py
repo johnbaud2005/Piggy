@@ -39,6 +39,7 @@ class Piggy(PiggyParent):
                 "w": ("Wall", self.wall),
                 "l": ("Wallloop", self.wallloop),
                 "a": ("Aroundbox", self.aroundbox),
+                "b": ("Box", self.box),
                 "o": ("Obstacle count", self.obstacle_count),
                 "s": ("Shy", self.shy),
                 "f": ("Follow", self.follow),
@@ -129,15 +130,15 @@ class Piggy(PiggyParent):
           self.left()
           time.sleep(1)
           self.stop()
-        elif self.read_disctance() > 300:
-          self.left()
-          time.sleep(1)
-          self.fwd()
-          time.sleep(1)
-          self.stop()
-          self.right()
-          self.sleep(1)
-        
+
+    def box(self):
+      for angle in range(self.MIDPOINT-350, self.MIDPOINT+350, 20):
+          self.servo(angle)
+          self.scan_data[angle] = self.read_distance()
+          if self.read_distance() > 0 < 350:
+            self.right()
+        elif self.read_distance() >-350 < 0:
+            self.left()
 
     def shake(self):
         """ Another example move """
