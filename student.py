@@ -132,13 +132,41 @@ class Piggy(PiggyParent):
           self.stop()
 
     def box(self):
-      for angle in range(self.MIDPOINT-350, self.MIDPOINT+350, 20):
-          self.servo(angle)
-          self.scan_data[angle] = self.read_distance()
-          if self.read_distance() > 0 < 350:
-            self.right()
-          elif self.read_distance() >-350 < 0:
-            self.left()
+      while True:
+        while self.read_distance() > 200:
+          self.fwd()
+        self.stop()
+        
+        self.servo(1600)
+        time.sleep(.4)
+      
+        right = self.read_distance()
+        self.servo(500)
+        time.sleep(.4)
+        left = self.read_distance()
+        if right < left:
+          self.left()
+          time.sleep(1)
+          self.fwd()
+          time.sleep(1)
+          self.right()
+          time.sleep(1)
+          self.fwd()
+          
+        else:
+          self.right()
+          time.sleep(1)
+          self.fwd()
+          time.sleep(1)
+          self.left()
+          time.sleep(1)
+          self.fwd()
+
+        
+        if self.read_distance() > 0 < 350:
+          self.right()
+        elif self.read_distance() >-350 < 0:
+          self.left()
 
   
     def shake(self):
