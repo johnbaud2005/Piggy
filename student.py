@@ -133,17 +133,18 @@ class Piggy(PiggyParent):
 
     def box(self):
       while True:
+        self.servo(self.MIDPOINT)
         while self.read_distance() > 200:
           self.fwd()
         self.stop()
         
         self.servo(1600)
-        time.sleep(.4)
+        time.sleep(1)
       
-        right = self.read_distance()
-        self.servo(500)
-        time.sleep(.4)
         left = self.read_distance()
+        self.servo(500)
+        time.sleep(1)
+        right = self.read_distance()
         if right < left:
           self.left()
           time.sleep(1)
@@ -170,10 +171,7 @@ class Piggy(PiggyParent):
     
 
         
-        if self.read_distance() > 0 < 350:
-          self.right()
-        elif self.read_distance() >-350 < 0:
-          self.left()
+        
 
   
     def shake(self):
