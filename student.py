@@ -176,6 +176,14 @@ class Piggy(PiggyParent):
           self.fwd(30,30)
           time.sleep(1)
 
+        elif (left < 200):
+          self.fwd(80,30)
+          time.sleep(1)
+          self.fwd(30,80)
+          time.sleep(1)
+          self.fwd(30,30)
+          time.sleep(1)
+
           
         
         
