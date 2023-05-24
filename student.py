@@ -131,54 +131,69 @@ class Piggy(PiggyParent):
           time.sleep(1)
           self.stop()
 
-      def box(self):
-        while True:
+    def box(self):
+      while True:
+        self.fwd(30,30)
+        self.servo(self.MIDPOINT)
+        time.sleep(.5)
+        center = self.read_distance()
+        self.servo(2000)
+        time.sleep(.5)
+        left = self.read_distance()
+        self.servo(700)
+        time.sleep(.5)
+        right = self.read_distance()
+
+        if (center < 200):
+          if right < left:
+            self.left()
+            time.sleep(1)
+            self.stop()
+            self.fwd()
+            time.sleep(3)
+            self.stop()
+            self.right()
+            time.sleep(1)
+            self.stop()
+            self.fwd()
+            
+          else:
+            self.right()
+            time.sleep(1)
+            self.stop()
+            self.fwd()
+            time.sleep(3)
+            self.stop()
+            self.left()
+            time.sleep(1)
+            self.stop()
+            self.fwd()
+        elif (right < 200):
+          self.fwd(30,80)
+          time.sleep(.5)
+          self.fwd(80,30)
+          time.sleep(.5)
           self.fwd(30,30)
-          self.servo(self.MIDPOINT)
           time.sleep(.5)
-          center = self.read_distance()
-          self.servo(2000)
-          time.sleep(.5)
-          left = self.read_distance()
-          self.servo(700)
-          time.sleep(.5)
-          right = self.read_distance()
+
+          
+        
+        
+
   
-          if (center < 200):
-            if right < left:
-              self.left(80,30)
-              time.sleep(1)
-              self.fwd(30,30)
-              time.sleep(3)
-              self.right(30,80)
-              time.sleep(1)
-              self.fwd(30,30)
-              
-            else:
-              self.right(30,80)
-              time.sleep(1)
-              self.fwd(30,30)
-              time.sleep(3)
-              self.left(80,30)
-              time.sleep(1)
-              self.fwd(30,30)
-          elif (right < 200):
-  
-  
-    
     def shake(self):
         """ Another example move """
         self.deg_fwd(720)
-         self.stop()
-  
+        self.stop()
+
     def example_move(self):
         """this is an example dance move that should be replaced by student-created content"""
-          self.right() # start rotating right
-          time.sleep(1) # turn for a second
-          self.stop() # stop
-          self.servo(1000) # look right
-          time.sleep(.25) # give your head time to move
-          self.servo(2000) # look left
+        self.right() # start rotating right
+        time.sleep(1) # turn for a second
+        self.stop() # stop
+        self.servo(1000) # look right
+        time.sleep(.25) # give your head time to move
+        self.servo(2000) # look left
 
     def scan(self):
         """Sweep the servo and populate the scan_data dictionary"""
