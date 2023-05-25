@@ -40,6 +40,7 @@ class Piggy(PiggyParent):
                 "l": ("Wallloop", self.wallloop),
                 "a": ("Aroundbox", self.aroundbox),
                 "b": ("Box", self.box),
+                "m": ("Maze", self.maze),
                 "o": ("Obstacle count", self.obstacle_count),
                 "s": ("Shy", self.shy),
                 "f": ("Follow", self.follow),
@@ -185,7 +186,39 @@ class Piggy(PiggyParent):
           time.sleep(1)
 
           
-        
+      def maze(self):
+        while True:
+          self.fwd()
+          if self.read_distance() < 300:
+            self.stop()
+          self.fwd(30,30)
+        self.servo(self.MIDPOINT)
+        time.sleep(.5)
+        center = self.read_distance()
+        self.servo(1500)
+        time.sleep(.5)
+        left = self.read_distance()
+        self.servo(700)
+        time.sleep(.5)
+        right = self.read_distance()
+
+        if (center < 200):
+          if right < left:
+            self.left()
+            time.sleep(1)
+            
+          else:
+            self.right()
+            time.sleep(1)
+            self.stop()
+            self.fwd()
+            time.sleep(3)
+            self.stop()
+            self.left()
+            time.sleep(1)
+            self.stop()
+            self.fwd()
+          
         
 
   
