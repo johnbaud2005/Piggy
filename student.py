@@ -201,11 +201,11 @@ class Piggy(PiggyParent):
             if (center < 200):
               if right < left:
                 self.left()
-                time.sleep(1)
+                time.sleep(.75)
                 
               else:
                 self.right()
-                time.sleep(1)
+                time.sleep(.75)
   
     def shake(self):
         """ Another example move """
