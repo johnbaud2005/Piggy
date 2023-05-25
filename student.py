@@ -206,17 +206,6 @@ class Piggy(PiggyParent):
               else:
                 self.right()
                 time.sleep(1)
-                self.stop()
-                self.fwd()
-                time.sleep(3)
-                self.stop()
-                self.left()
-                time.sleep(1)
-                self.stop()
-                self.fwd()
-          
-        
-
   
     def shake(self):
         """ Another example move """
